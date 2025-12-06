@@ -71,6 +71,13 @@ module.exports = function(RED) {
         }
 
         node.on('input', function(msg) {
+            if(msg.config !== undefined) {
+                // defaults suitable dashboard progress
+                node.from = Number(msg.config.from || 1);
+                node.to = Number(msg.config.to || 100);
+                node.step = Number(msg.config.step || 1);
+                node.duration = Number(msg.config.duration || 10000);
+            }
             if (typeof msg.payload === "boolean" && msg.payload === true) {
                 switch (msg.topic) {
                     case "start":
