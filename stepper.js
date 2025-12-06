@@ -78,7 +78,7 @@ module.exports = function(RED) {
                 node.step = Number(msg.config.step || 1);
                 node.duration = Number(msg.config.duration || 10000);
             }
-            if (typeof msg.payload === "boolean" && msg.payload === true) {
+            if (msg.topic !== undefined) {
                 switch (msg.topic) {
                     case "start":
                         startStepping();
@@ -97,7 +97,7 @@ module.exports = function(RED) {
                         break;
                 }
             } else {
-                node.warn("Ignoring input: payload must be boolean true.");
+                node.warn("Ignoring input: topic not defined");
             }
         });
 
