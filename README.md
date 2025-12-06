@@ -1,5 +1,8 @@
-# node-red-contrib-stepper
+# fork
 
+Incoming messages with msg.config now configure the node
+
+# node-red-contrib-stepper
 
 This Node-RED node facilitates the generation of stepped numerical sequences with user-defined parameters. It is ideal for scenarios where a controlled sequence of numbers is required, such as in simulations, iterative testing, or gradual value changes in automation tasks.
 
